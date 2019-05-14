@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/src/css/main">
+  <script type="text/javascript" src="/src/js/dynpage"></script>
+  <title>Simple Show application</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <form action="/de" method="GET">
+        <button type="submit">Seite auf deutsch</button>
+      </form>
+    </nav>
+  </header>
+  <main>
+    <h1>NodeJS - Applikation</h1>
+    <section>
+      <div class="section-head">
+        <h2>Description</h2>
+      </div>
+      <div class="section-body">
+        <p>This example application was developed in nodejs. <br />
+          Even though this might not look very promising at first, it's neccessary to mention that NodeJs is a back-end framework. <br />
+          Indicating that NodeJs is primarly used and meant for the functionalities in the background rather than the front end design. <br />
+        </p>
+        <p>
+          Next to a small NodeJs application, a simple UI-Process-Automation is demonstrated as well. <br />
+          To be more specific, this tool enables you to create an automated interaction(clicking and typing) with a target page. <br />
+        </p>
+        <p>
+          Note that this is an example application, by far it is not bullet proof, meaning not all potential bugs are dealt with.
+        </p>
+      </div>
+        <div class="section-foot">       </div>
+
+    </section>
+    <section>
+    </section>
+    <section>
+      <div class="section-head">
+
+      <h2>UI- Process - Automatization</h2>
+    </div>
+    <div class="section-body">
+
+        <p>The selector should be a css-selector and provied an unique element hit.</p>
+      <form class="" action="/en" method="POST">
+        <label for="">Enter target URL:</label>
+        <input type="url" name="target_url" value="">
+        <p>Define actions:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Order</th>
+              <th>Action</th>
+              <th>Element Selector</th>
+              <th>Text to type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="orderNr">1</td>
+              <td class="actionSel">
+                <select class="" name="actionSel_1" onchange="inputChangeBySelection(this)">
+                  <option value="type">Type Text</option>
+                  <option value="click">Click element</option>
+                </select>
+              </td>
+              <td class="cssQuery">
+                <input type="text" name="cssQuery_1" value="">
+              </td>
+              <td class="furtherInput">
+                <input type="text" name="furtherInput_1" value="">
+              </td>
+              <td><button type="button" onclick="delRow(this.parentNode.parentNode)">x</button></td>
+            </tr>
+            <tr class="addActionRow">
+              <td></td>
+              <td></td>
+              <td colspan="4">
+                <button type="button" onclick="addActionRow(this.parentNode)">
+                  Add Action
+                </button>
+              </td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        <input type="submit" value="Submit - Execute">
+      </form>
+    </div>
+    <div class="section-foot">    </div>
+    </section>
+  </main>
+  <footer>
+    <div hidden>
+        <p class="sel1">Type Text</p>
+        <p class="sel2">Click element</p>
+    </div>
+  </footer>
+</body>
+
+</html>

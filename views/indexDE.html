@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/src/css/main">
+  <script type="text/javascript" src="/src/js/dynpage"></script>
+  <title>Simple Show application</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <form action="/en" method="GET">
+        <button type="submit">Page in English</button>
+      </form>
+    </nav>
+  </header>
+  <main>
+    <h1>NodeJS - Applikation</h1>
+    <section>
+      <div class="section-head">
+        <h2>Beschreibung</h2>
+      </div>
+      <div class="section-body">
+        <p>Diese Beispielanwendung wurde in/mit NodeJS entwickelt. <br />
+          Auf den ersten Blick wirkt es relativ schlicht, doch sei hierbei gesagt, dass NodeJS ein BackEnd-Framework ist. <br />
+          Dies Bedeuted das NodeJS primär für die Funktionalität im Hintergrund gedacht und verwendet wird.</p>
+          <p>Neben der kleinen Demonstration einer NodeJs-Webanwendung wird in dieser Applikation auch
+            eine Simple UI-Prozess-Automatisierung demonstriert.</p>
+            <p>
+              Zu der Applikation: <br />
+              Im Rahmen einer Demonstration sollten mehrere Möglichkeiten aufgezeigt werden, <br />
+              Neben dem hosten einer WebApplikation welche meistens nur als "Webseite" wahrgenommen werden, <br />
+              ist im Rahmen dieser Demonstration auch ein Tatsächliche Anwendungslogik implementiert. <br />
+              Konkret eine automatische Interaktion mit einer Webseite.
+            </p>
+            <p>
+              Es handelt sich hierbei um eine Demonstrationsanwendung, demnach ist die Anwendung nicht Kugelsicher (nicht alle potenziellen Fehlerquellen abgefangen). <br />
+            </p>
+      </div>
+        <div class="section-foot">       </div>
+
+    </section>
+    <section>
+      <div class="section-head">
+        <h2>Vorgefertigte Beispiele</h2>
+      </div>
+      <div class="section-body">
+        <form action="/example/duckNode" method="POST">
+          <button type="submit">Nodejs suche in Duckduckgo.com</button>
+        </form>
+        <form action="/example/rimh333" method="POST">
+          <button type="submit">Phrasensuche H333 - exemplarisch</button>
+        </form>
+        <!--form action="/example/rimh501" method="POST">
+          <button type="submit">Phrasensuche H001-H015 - exemplarisch</button>
+        </form-->
+      </div>
+      <div class="section-foot">
+
+      </div>
+    </section>
+    <section>
+      <div class="section-head">
+
+      <h2>UI- Prozessautomatisierung - Anwendungslogik</h2>
+    </div>
+    <div class="section-body">
+      <p>Bei den Element Selektoren sind die CSS Selektoren gemeint. Bsp. Element mit der Id="search_button", wäre "#search_button". <br />
+      Der Selektor sollte bestenfalls nur auf ein Element zutreffen.</p>
+      <form class="" action="/" method="POST">
+        <label for="">Ziel URL eingeben:</label>
+        <input type="url" name="target_url" value="">
+        <p>Aktion(en) bestimmen:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Reihenfolge</th>
+              <th>Aktion</th>
+              <th>Element Selektor</th>
+              <th>Zu tippender Text</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="orderNr">1</td>
+              <td class="actionSel">
+                <select class="" name="actionSel_1" onchange="inputChangeBySelection(this)">
+                  <option value="type">Text eintippen</option>
+                  <option value="click">Element klicken</option>
+                </select>
+              </td>
+              <td class="cssQuery">
+                <input type="text" name="cssQuery_1" value="">
+              </td>
+              <td class="furtherInput">
+                <input type="text" name="furtherInput_1" value="">
+              </td>
+              <td><button type="button" onclick="delRow(this.parentNode.parentNode)">x</button></td>
+            </tr>
+            <tr class="addActionRow">
+              <td></td>
+              <td></td>
+              <td colspan="4">
+                <button type="button" onclick="addActionRow(this.parentNode)">
+                  Aktion hinzufügen
+                </button>
+              </td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        <input type="submit" value="Ausführen">
+      </form>
+    </div>
+    <div class="section-foot">    </div>
+    </section>
+  </main>
+  <footer>
+    <div hidden>
+        <p class="sel1">Text eintippen</p>
+        <p class="sel2">Element klicken</p>
+    </div>
+  </footer>
+</body>
+
+</html>
